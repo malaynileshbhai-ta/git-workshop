@@ -48,5 +48,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: my-artifact
+      - name: Run script.py
+        run: |
+          ls -R
+          python dist/script.py
 
 
