@@ -26,3 +26,4 @@ jobs:
         run: |
           pip install --upgrade build
           python -m build
+          tree .
