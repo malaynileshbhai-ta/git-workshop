@@ -1,4 +1,4 @@
-name: CI-HelloWorld
+name: Build
 
 on:
   push:
@@ -7,15 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
-
-  hello-worls-job:
-    name: Hello World
+  with-checkout-job:
+    name: With Checkout
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Run echo
-        run: |
-          echo "Hello world.!"
+      - name: Git Checkout
+        uses: actions/checkout@v4
 
-      - name: Run ls
+      - name: Install tree & run
         run: |
-          ls -la
+          sudo apt-get install -y tree
+          tree .
+      - name: Build package
+        run: |
+          python -m build
