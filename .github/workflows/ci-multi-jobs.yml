@@ -3,7 +3,7 @@ name: CI-Multi-Jobs
 on:
   push:
     branches:
-      - branch_name
+      - trail
   workflow_dispatch:
 
 jobs:
