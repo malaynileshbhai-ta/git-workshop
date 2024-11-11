@@ -37,4 +37,15 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: path/to/artifact/world.txt
+          path: dist/
+
+  deploy:
+    name: Deploy Job
+    needs: with-checkout-job
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my_artifact
+
