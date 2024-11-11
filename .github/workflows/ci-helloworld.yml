@@ -51,6 +51,7 @@ jobs:
       - name: Run script.py
         run: |
           ls -R
+          pip install *.whl
           python dist/script.py
 
 
